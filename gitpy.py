@@ -29,7 +29,7 @@ def git_push():
         repo.index.commit(COMMIT_MESSAGE)
         origin = repo.remote(name='origin')
         origin.push()
-        print('data pushed!')
+        print('data pushed!!')
     except Exception as e:
         print(e)
         print('Some error occured while pushing the code')    
