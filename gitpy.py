@@ -25,6 +25,7 @@ def print_repository_info(repo):
 def git_push():
     try:
         repo = Repo(repo_path)
+        print(repo.git.status())
         repo.git.add('.')
         repo.index.commit(COMMIT_MESSAGE)
         origin = repo.remote(name='origin')
