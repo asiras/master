@@ -25,7 +25,7 @@ def print_repository_info(repo):
 def git_push():
     try:
         repo = Repo(repo_path)
-        repo.git.add(update=True)
+        repo.git.add('.')
         repo.index.commit(COMMIT_MESSAGE)
         origin = repo.remote(name='origin')
         origin.push()
