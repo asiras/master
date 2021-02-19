@@ -37,23 +37,22 @@ def git_push():
 
 
 if __name__=='__main__':
-    #repo_path = os.getenv('REPO_PATH')
     
     # Repo object used to interact with Git repositories
     repo = Repo(repo_path)
 
     # check that the repository loaded correctly
-    if not repo.bare:
-        print('Repo at {} successfully loaded.'.format(repo_path))
-        print_repository_info(repo)
+    # if not repo.bare:
+    #     print('Repo at {} successfully loaded.'.format(repo_path))
+    #     print_repository_info(repo)
 
-        # create list of commits then print some of them to stdout
-        commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
-        for commit in commits:
-            print_commit_data(commit)
-            pass
+    #     # create list of commits then print some of them to stdout
+    #     commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
+    #     for commit in commits:
+    #         print_commit_data(commit)
+    #         pass
 
-    else:
-        print('Could not load repository at {} :'.format(repo_path))
+    # else:
+    #     print('Could not load repository at {} :'.format(repo_path))
 
     git_push()
