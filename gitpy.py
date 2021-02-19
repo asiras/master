@@ -27,8 +27,8 @@ def git_push():
         repo = Repo(repo_path)
         repo.git.add(update=True)
         repo.index.commit(COMMIT_MESSAGE)
-        origin = repo.remote(name='main')
-        origin.push()
+        #origin = repo.remote(name='master')
+        #origin.push()
     except:
         print('Some error occured while pushing the code')    
 
