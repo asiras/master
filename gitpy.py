@@ -1,5 +1,5 @@
 from git import Repo
-#Repo.clone_from("https://github.com/saamaresearch/pfizer-3rdHackathon-smpc-pil.git", "D://test_git//")
+#Repo.clone_from("https://github.com/asiras/master.git", "D://test_git//")
 import os
 COMMIT_MESSAGE = 'comment from python script'
 repo_path="D://test_git//"
@@ -42,18 +42,18 @@ if __name__=='__main__':
     # Repo object used to interact with Git repositories
     repo = Repo(repo_path)
 
-    # check that the repository loaded correctly
-    # if not repo.bare:
-    #     print('Repo at {} successfully loaded.'.format(repo_path))
-    #     print_repository_info(repo)
+    #check that the repository loaded correctly
+    if not repo.bare:
+        print('Repo at {} successfully loaded.'.format(repo_path))
+        print_repository_info(repo)
 
-    #     # create list of commits then print some of them to stdout
-    #     commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
-    #     for commit in commits:
-    #         print_commit_data(commit)
-    #         pass
+        # create list of commits then print some of them to stdout
+        commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
+        for commit in commits:
+            print_commit_data(commit)
+            pass
 
-    # else:
-    #     print('Could not load repository at {} :'.format(repo_path))
+    else:
+        print('Could not load repository at {} :'.format(repo_path))
 
     git_push()
