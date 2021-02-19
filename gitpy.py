@@ -27,7 +27,7 @@ def git_push():
         repo = Repo(repo_path)
         repo.git.add(update=True)
         repo.index.commit(COMMIT_MESSAGE)
-        origin = repo.remote(name='asiras/master')
+        origin = repo.remote(name='origin')
         origin.push()
         print('data pushed!')
     except Exception as e:
