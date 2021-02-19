@@ -3,6 +3,8 @@ from git import Repo
 import os
 COMMIT_MESSAGE = 'comment from python script'
 repo_path="D://test_git//"
+
+from getpass import getpass
 COMMITS_TO_PRINT = 5
 
 def print_commit_data(commit):
@@ -39,6 +41,12 @@ def git_push():
         print('Some error occured while pushing the code')    
 
 
+# project_dir = os.path.dirname(os.path.abspath(__file__))
+# os.environ['GIT_ASKPASS'] = os.path.join(project_dir, 'askpass.py')
+# os.environ['GIT_USERNAME'] = input('enter user name ')
+# os.environ['GIT_PASSWORD'] = getpass()
+# repo = Repo(repo_path)
+# print(repo.git.pull())
 
 
 if __name__=='__main__':
