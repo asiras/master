@@ -26,6 +26,7 @@ def git_push():
     try:
         repo = Repo(repo_path)
         print(repo.git.status())
+        print('adding files to repo...')
         repo.git.add('.')
         repo.index.commit(COMMIT_MESSAGE)
         origin = repo.remote(name='origin')
