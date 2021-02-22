@@ -1,7 +1,7 @@
 # import os
 # from pprint import pprint
 # import requests
-# token ='d6a2d1c8ae3de0f86fbd1d67f0b63d6edff21058'
+# token ='0af5046d5bc732cb1ca2311cd37bd164041d6d27'
 
 # headers = {'Authorization': 'token ' + token}
 
@@ -14,7 +14,7 @@ from github import Github
 import os
 from pprint import pprint
 import urllib3
-token ='d6a2d1c8ae3de0f86fbd1d67f0b63d6edff21058'
+token ='0af5046d5bc732cb1ca2311cd37bd164041d6d27'
 g = Github(token)
 for repo in g.get_user().get_repos():
     print(repo.name)
