@@ -1,3 +1,4 @@
+#gitpython library
 from git import Repo
 
 #Repo.clone_from("https://github.com/asiras/master.git", "D://test_git//")
@@ -51,32 +52,32 @@ repo = Repo(repo_path)
 
 print(repo.git.remote('-v'))
 
-import requests
-username = input("Enter the github username:")
-request = requests.get('https://api.github.com/users/'+username+'/repos')
-json = request.json()
-for i in range(0,len(json)):
-  print("Project Number:",i+1)
-  print("Project Name:",json[i]['name'])
-  print("Project URL:",json[i]['svn_url'],"\n")
+# import requests
+# username = input("Enter the github username:")
+# request = requests.get('https://api.github.com/users/'+username+'/repos')
+# json = request.json()
+# for i in range(0,len(json)):
+#   print("Project Number:",i+1)
+#   print("Project Name:",json[i]['name'])
+#   print("Project URL:",json[i]['svn_url'],"\n")
 
 if __name__=='__main__':
     
-    # Repo object used to interact with Git repositories
-    repo = Repo(repo_path)
+    # # Repo object used to interact with Git repositories
+    # repo = Repo(repo_path)
 
-    #check that the repository loaded correctly
-    if not repo.bare:
-        print('Repo at {} successfully loaded.'.format(repo_path))
-        print_repository_info(repo)
+    # #check that the repository loaded correctly
+    # if not repo.bare:
+    #     print('Repo at {} successfully loaded.'.format(repo_path))
+    #     print_repository_info(repo)
 
-        # create list of commits then print some of them to stdout
-        commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
-        for commit in commits:
-            print_commit_data(commit)
-            pass
+    #     # create list of commits then print some of them to stdout
+    #     commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
+    #     for commit in commits:
+    #         print_commit_data(commit)
+    #         pass
 
-    else:
-        print('Could not load repository at {} :'.format(repo_path))
+    # else:
+    #     print('Could not load repository at {} :'.format(repo_path))
 
     git_push()
