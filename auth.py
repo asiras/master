@@ -1,12 +1,13 @@
-import os
-from pprint import pprint
-import requests
-token ='c1e12b1a76b94738d966f978c19726438ef6bd87'
+# import os
+# from pprint import pprint
+# import requests
+# from getpass import getpass
+# token =getpass()
 
-headers = {'Authorization': 'token ' + token}
+# headers = {'Authorization': 'token ' + token}
 
-login = requests.get('https://api.github.com/user', headers=headers)
-pprint(login.json())
+# login = requests.get('https://api.github.com/user', headers=headers)
+# pprint(login.json())
 #res=requests.get('https://api.github.com/users/asiras/repos')
 #pprint(res.text)
 
@@ -16,7 +17,7 @@ pprint(login.json())
 # import os
 # from pprint import pprint
 # import urllib3
-# token ='c1e12b1a76b94738d966f978c19726438ef6bd87'
+# token =''
 # g = Github(token)
 # for repo in g.get_user().get_repos():
 #     print(repo.name)
@@ -28,8 +29,8 @@ pprint(login.json())
 # print(g.get_user())
 
 from github import Github
-
-access_token = 'c1e12b1a76b94738d966f978c19726438ef6bd87'
+from getpass import getpass
+access_token =getpass()
 g = Github(access_token)
 
 repo_list = [i for i in g.get_user().get_repos()]
