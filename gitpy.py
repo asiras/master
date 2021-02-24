@@ -1,12 +1,25 @@
 #gitpython library abc
+
+from github import Github
+from getpass import getpass
 from git import Repo
+access_token =getpass('Personal Access Token:')
+g = Github(access_token)
+import os
+
+repo_list = [i for i in g.get_user().get_repos()]
+for i in repo_list:
+    repo_name = str(i).replace('Repository(full_name="', '')
+    repo_name = str(repo_name).replace('")', '')
+    print('https://github.com/' + repo_name)
+
+
 
 #Repo.clone_from("https://github.com/asiras/master.git", "D://test_git//")
-import os
+
 #COMMIT_MESSAGE = 'comment from python script'
 repo_path="D://test_git//"
 
-from getpass import getpass
 COMMITS_TO_PRINT = 5
 
 def print_commit_data(commit):
@@ -41,7 +54,6 @@ def git_push():
     except Exception as e:
         print(e)
         print('Some error occured while pushing the code')    
-
 
 
 if __name__=='__main__':
