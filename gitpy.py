@@ -3,7 +3,7 @@ from git import Repo
 
 #Repo.clone_from("https://github.com/asiras/master.git", "D://test_git//")
 import os
-COMMIT_MESSAGE = 'comment from python script'
+#COMMIT_MESSAGE = 'comment from python script'
 repo_path="D://test_git//"
 
 from getpass import getpass
@@ -34,7 +34,7 @@ def git_push():
         print('adding files to repo...')
 
         repo.git.add('.')
-        repo.index.commit(COMMIT_MESSAGE)
+        repo.index.commit(input("enter commit message : "))
         origin = repo.remote(name='origin')
         origin.push()
         print('data pushed!!')
