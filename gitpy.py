@@ -3,15 +3,16 @@
 from github import Github
 from getpass import getpass
 from git import Repo
-access_token =getpass('Personal Access Token:')
-g = Github(access_token)
 import os
+# access_token =getpass('Personal Access Token:')
+# g = Github(access_token)
 
-repo_list = [i for i in g.get_user().get_repos()]
-for i in repo_list:
-    repo_name = str(i).replace('Repository(full_name="', '')
-    repo_name = str(repo_name).replace('")', '')
-    print('https://github.com/' + repo_name)
+
+# repo_list = [i for i in g.get_user().get_repos()]
+# for i in repo_list:
+#     repo_name = str(i).replace('Repository(full_name="', '')
+#     repo_name = str(repo_name).replace('")', '')
+#     print('https://github.com/' + repo_name)
 
 
 
@@ -20,7 +21,10 @@ for i in repo_list:
 #COMMIT_MESSAGE = 'comment from python script'
 repo_path="D://test_git//"
 
-COMMITS_TO_PRINT = 5
+COMMITS_TO_PRINT = 2
+repo = Repo(repo_path)
+diff = repo.git.diff(repo.head.commit.tree)
+print(diff)
 
 def print_commit_data(commit):
     print('-----')
