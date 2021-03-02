@@ -135,6 +135,6 @@ if __name__=='__main__':
     # else:
     #     print('Could not load repository at {} :'.format(repo_path))
     
-    #create_new_branch(repo)#create new branch
-    git_push()
+    create_new_branch(repo)#create new branch
+    #git_push()
     
