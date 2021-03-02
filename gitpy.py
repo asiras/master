@@ -104,6 +104,7 @@ def git_push():
             origin = repo.remote(name='origin')
             origin.push()
             print('data pushed!!')
+            
     except Exception as e:
         print(e)
         print('Some error occured while pushing the code')    
