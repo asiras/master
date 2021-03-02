@@ -66,22 +66,12 @@ def create_new_branch(repo):
     try:
         repo.git.branch(new_branch)
         print('branch created ')
+        repo.git.checkout(new_branch)
+        current = repo.create_head(new_branch)
+        repo.git.push("--set-upstream", 'origin', current)
     except:
         print('branch already exists!')
-
-    # You need to check out the branch after creating it if you want to use it
-    repo.git.checkout(new_branch)
-    current = repo.create_head(new_branch)
-    print(repo.git.status())
-    repo.git.add('.')
-    repo.index.commit(input("Enter commit message : "))
-    repo.git.push("--set-upstream", 'origin', current)
-    #print("--->",repo.head.ref)
-    print('data pushed!!')
-
-
-    #To checkout master again:
-    #repo.git.checkout('main')
+        
 
 def print_repository_info(repo):
 
@@ -135,6 +125,6 @@ if __name__=='__main__':
     # else:
     #     print('Could not load repository at {} :'.format(repo_path))
     
-    create_new_branch(repo)#create new branch
-    #git_push()
+    #create_new_branch(repo)#create new branch
+    git_push()
     
