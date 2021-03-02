@@ -1,4 +1,4 @@
-#gitpython library abc
+#gitpython library
 
 from github import Github
 from getpass import getpass
