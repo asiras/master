@@ -22,13 +22,13 @@ except Exception as e:
     sys.exit()
 
 def download():
-    repo_name=input('\nEnter repository link to be cloned:')
-    local_folder=input('\nEnter local path to store code:')
+    repo_name=input('\nEnter repository link to be Downloaded:')
+    local_folder=input('\nEnter local path to download files:')
     try:
         Repo.clone_from(repo_name,local_folder)
-        print('\nRepository clonned successfully')
+        print('\nRepository downloaded successfully')
     except Exception as e:
-        print('Could not clone')
+        print('Could not download')
         print(e)
     
 if __name__=='__main__':
