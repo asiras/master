@@ -98,7 +98,8 @@ def git_push():
         print(repo.git.status())
         print(repo.git.pull())
         print('adding files to repo...')
-
+        if repo.is_dirty(untracked_files=True):
+            print('Changes detected.')
         repo.git.add('.')
         repo.index.commit(input("enter commit message : "))
         origin = repo.remote(name='origin')
