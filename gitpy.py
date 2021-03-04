@@ -63,7 +63,7 @@ def create_new_branch(repo):
     print("Active branch is :", branch.name)
     # Create a new branch
     
-    new_branch=input('\nEnter branch name:')
+    new_branch=input('\nEnter new branch name or branch you want to switch to :')
     try:
         repo.git.branch(new_branch)
         print('branch created ')
