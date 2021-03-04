@@ -72,8 +72,6 @@ def create_new_branch(repo):
         repo.git.push("--set-upstream", 'origin', current)
     except:
         try:
-            branch = repo.active_branch
-            print (branch.name)
             repo.git.checkout(new_branch)
             print('switched to {0} branch'.format(new_branch))
             print(repo.git.status())
