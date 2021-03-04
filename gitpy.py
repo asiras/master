@@ -84,7 +84,7 @@ def create_new_branch(repo):
                 origin.push()
                 print('data pushed!!')
         except Exception as e:
-            print('Please save or stash current branch changes')
+            print('Please save or stash {0} branch changes'.format(repo.active_branch))
         
 
 def print_repository_info(repo):
