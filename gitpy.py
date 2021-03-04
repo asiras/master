@@ -70,7 +70,17 @@ def create_new_branch(repo):
         current = repo.create_head(new_branch)
         repo.git.push("--set-upstream", 'origin', current)
     except:
-        print('branch already exists!')
+        print('switched to {0} branch'.format(new_branch))
+        print(repo.git.status())
+        print(repo.git.pull())
+        if repo.is_dirty(untracked_files=True):
+            print('Changes detected.')
+            repo.git.add('.')
+            repo.index.commit(input("enter commit message : "))
+            origin = repo.remote(name='origin')
+            origin.push()
+            print('data pushed!!')
+
         
 
 def print_repository_info(repo):
@@ -125,6 +135,6 @@ if __name__=='__main__':
     # else:
     #     print('Could not load repository at {} :'.format(repo_path))
     
-    #create_new_branch(repo)#create new branch
-    git_push()
+    create_new_branch(repo)#create new branch
+    #git_push()
     
