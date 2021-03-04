@@ -122,7 +122,7 @@ if __name__=='__main__':
 
     #print_diff(repo)# print changes made to file 
 
-    list_remotes(repo)
+    #list_remotes(repo)
     
 
     #check that the repository loaded correctly
