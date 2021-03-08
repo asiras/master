@@ -16,6 +16,11 @@ def login(username,access_token):
             repo_name = str(i).replace('Repository(full_name="', '')
             repo_name = str(repo_name).replace('")', '')
             print('https://github.com/' + repo_name)
+            login_success_screen = Toplevel()
+            login_success_screen.title("Success")
+            login_success_screen.geometry("150x100")
+            Label(login_success_screen, text="Login Success").pack()
+            
     except Exception as e:
         print('\nCredientials does not match')
         print(e)
