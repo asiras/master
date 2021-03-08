@@ -124,25 +124,7 @@ if __name__=='__main__':
     #clone()
 
     #print_diff(repo)# print changes made to file 
-
-    #list_remotes(repo)
     
-
-    #check that the repository loaded correctly
-    # if not repo.bare:
-    #     print('\n Repo at {} successfully loaded.'.format(repo_path))
-    #     print_repository_info(repo)
-
-    #     ## create list of commits then print some of them to stdout
-    #     # commits = list(repo.iter_commits('main'))[:COMMITS_TO_PRINT]
-    #     # for commit in commits:
-    #     #     print_commit_data(commit)
-    #     #     pass
-
-    # else:
-    #     print('Could not load repository at {} :'.format(repo_path))
-    
-
     create_new_branch(repo)#create new branch
     #git_push()
     
