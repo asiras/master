@@ -124,7 +124,6 @@ if __name__=='__main__':
     #clone()
 
     #print_diff(repo)# print changes made to file 
-    #kdjnsdn
     create_new_branch(repo)#create new branch
     #git_push()
     
