@@ -5,21 +5,23 @@ from getpass import getpass
 from git import Repo
 import os
 import sys
-username=input('enter your user name:')
-access_token =getpass('Personal Access Token:')
-g = Github(access_token)
 
-try:
-    repo_list = [i for i in g.get_user().get_repos()]
-    print('\n')
-    for i in repo_list:
-        repo_name = str(i).replace('Repository(full_name="', '')
-        repo_name = str(repo_name).replace('")', '')
-        print('https://github.com/' + repo_name)
-except Exception as e:
-    print('\nCredientials does not match')
-    print(e)
-    sys.exit()
+def login():
+    username=input('enter your user name:')
+    access_token =getpass('Personal Access Token:')
+    g = Github(access_token)
+
+    try:
+        repo_list = [i for i in g.get_user().get_repos()]
+        print('\n')
+        for i in repo_list:
+            repo_name = str(i).replace('Repository(full_name="', '')
+            repo_name = str(repo_name).replace('")', '')
+            print('https://github.com/' + repo_name)
+    except Exception as e:
+        print('\nCredientials does not match')
+        print(e)
+        sys.exit()
 
 def clone():
     repo_name=input('\nEnter repository link to be Downloaded:')
@@ -118,6 +120,7 @@ if __name__=='__main__':
     
     # Repo object used to interact with Git repositories
     repo = Repo(repo_path)
+    login()
     #clone()
 
     #print_diff(repo)# print changes made to file 
