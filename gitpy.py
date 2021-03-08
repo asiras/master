@@ -144,6 +144,5 @@ if __name__=='__main__':
     
 
     create_new_branch(repo)#create new branch
-    
     #git_push()
     
