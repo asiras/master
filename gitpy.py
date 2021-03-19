@@ -33,7 +33,7 @@ def clone():
         print('Could not download')
         print(e)
 #COMMIT_MESSAGE = 'comment from python script'
-repo_path="D://test_git//"
+repo_path="D://test5//"
 
 COMMITS_TO_PRINT = 2
 
@@ -123,7 +123,7 @@ if __name__=='__main__':
     login()
     #clone()
 
-    #print_diff(repo)# print changes made to file 
-    create_new_branch(repo)#create new branch
+    print_diff(repo)# print changes made to file 
+    #create_new_branch(repo)#create new branch
     #git_push()
     

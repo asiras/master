@@ -5,42 +5,34 @@ from getpass import getpass
 from git import Repo
 import os
 import sys
-
+from tkinter import messagebox
+from tkinter.scrolledtext import *
+import tkinter as tk
 def login(username,access_token):
     g = Github(access_token)
-
     try:
         repo_list = [i for i in g.get_user().get_repos()]
         print('\n')
+        display_list=[]
         for i in repo_list:
             repo_name = str(i).replace('Repository(full_name="', '')
             repo_name = str(repo_name).replace('")', '')
-            print('https://github.com/' + repo_name)
-            login_success_screen = Toplevel()
-            login_success_screen.title("Success")
-            login_success_screen.geometry("150x100")
-            Label(login_success_screen, text="Login Success").pack()
-            
+            display_list.append('https://github.com/' + repo_name)
+        display=ScrolledText(top,height=5)
+        display.grid(column=0,pady=10,padx=10)
+        print(display_list)
+        display.insert(tk.INSERT,display_list)
     except Exception as e:
+        messagebox.showinfo(title="git accelerator",message="Credientials does not match")
         print('\nCredientials does not match')
         print(e)
         sys.exit()
-
-def command1():
-    if entry1.get == 'admin' and entry2.get()== 'password' or entry1.get() == 'test' and entry2.get == 'pass':
-        root.deiconify()
-        top.destroy()
-
-def command2():
-    top.destroy()
-    root.destroy()
-    sys.exit()
     
 root = Tk()
 top = Toplevel()
 
-top.geometry('300x260')
-top.title('Login to GitHub')
+top.geometry('750x450')
+top.title('Saama Git Accelerator')
 top.configure(background='white')
 photo = PhotoImage(file='1.gif')
 photo1 = Label(top,image=photo,bg='white')
@@ -57,7 +49,7 @@ lbl2.pack()
 entry2.pack()
 button1.pack()
 
-root.title('Saama Git Accelerator')
+root.title('')
 root.configure(background='white')
 root.geometry('855x650')
 root.withdraw()
