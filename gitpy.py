@@ -42,20 +42,6 @@ def print_diff(repo):
     print('\n\n')
     print(diff)
 
-def print_commit_data(commit):
-    print('-----')
-    print(str(commit.hexsha))
-    print("\"{}\" by {} ({})".format(commit.summary, commit.author.name, commit.author.email))
-    print(str(commit.authored_datetime))
-    print(str("count: {} and size: {}".format(commit.count(), commit.size)))
-
-def list_remotes(repo):
-    print(' \n Remotes:')
-    for remote in repo.remotes:
-        print(f'- {remote.name} {remote.url}')
-    #repo.delete_remote('my_new_branch')
-
-
 def create_new_branch(repo):
     # List all branches
     print("\nBranches availabe are :")
