@@ -1,0 +1,1 @@
+python publish_workbook.py --server https://prod-uk-a.online.tableau.com --username akshay.siras@saama.com --filepath D:\tableau\SUPERSTORE_KPIs.twbx --logging-level debug --site ultragenyxpoc
