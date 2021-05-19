@@ -33,6 +33,7 @@ def clone():
         print('Could not download')
         print(e)
 #COMMIT_MESSAGE = 'comment from python script'
+
 repo_path="D://test5//"
 
 COMMITS_TO_PRINT = 2
@@ -100,16 +101,31 @@ def git_push():
     except Exception as e:
         print(e)
         print('Some error occured while pushing the code')    
-#changed line
+
+
+def numbers_to_strings(argument):
+    # Repo object used to interact with Git repositories
+    repo = Repo(repo_path)
+    
+    if argument== 0:
+        clone()
+    elif argument== 1:
+        print_diff(repo)
+    elif argument== 2:
+        create_new_branch(repo)
+    elif argument== 3:
+        git_push()
+    else:
+        print('Enter proper option number')
 
 if __name__=='__main__':
     
-    # Repo object used to interact with Git repositories
+    
     repo = Repo(repo_path)
+    print('Login with your username and secret access token : \n')
     login()
-    #clone()
-
-    print_diff(repo)# print changes made to file 
-    #create_new_branch(repo)#create new branch
-    #git_push()
+    
+    argument=input(' \n Input below number to do your choice of operation : \n 0: clone \n 1: Print difference \n 2: Create/change branch \n 3: Push code \n Enter your choice : ')
+    print(argument)
+    numbers_to_strings(int(argument))
     
